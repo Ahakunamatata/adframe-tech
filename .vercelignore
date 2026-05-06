@@ -1,0 +1,8 @@
+# Deploy only the landing page, serverless function, and public assets.
+.DS_Store
+*.csv
+*.xlsx
+*.py
+*.md
+public/
+skit-style-app-video-ad-landing_副本.html

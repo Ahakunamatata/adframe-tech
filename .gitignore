@@ -1,0 +1,14 @@
+.DS_Store
+
+# Local lead research data and scripts that are not part of the AdFrame landing page.
+*.csv
+*.xlsx
+*.py
+README_VALIDATION.md
+lead_*.md
+contact_enrichment_summary.md
+manual_lookup_queue.md
+feishu_*.md
+public/
+skit-style-app-video-ad-landing_副本.html
+联系人线索_enriched.csv

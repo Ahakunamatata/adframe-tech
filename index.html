@@ -1,0 +1,1611 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Founding Pilot: $1 Skit-Style App Video Test | AdFrame</title>
+  <meta name="description" content="Get one custom scenario-led app video creative for $1. Built for mobile app UA, growth, and performance creative teams testing skit-style paid social ads." />
+  <meta property="og:title" content="Founding Pilot: $1 Skit-Style App Video Test | AdFrame" />
+  <meta property="og:description" content="Get one custom scenario-led app video creative for $1. Built for mobile app UA, growth, and performance creative teams testing skit-style paid social ads." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --bg:      oklch(99% 0.002 240);
+      --surface: oklch(100% 0 0);
+      --fg:      oklch(18% 0.012 250);
+      --muted:   oklch(54% 0.012 250);
+      --border:  oklch(92% 0.005 250);
+      --accent:  oklch(58% 0.18 255);
+
+      --font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+      --font-body:    -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+      --font-mono:    'SFMono-Regular', 'JetBrains Mono', ui-monospace, Menlo, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.45;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    h1, h2, h3, p { margin: 0; }
+
+    .page {
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, color-mix(in oklch, var(--border), transparent 72%) 1px, transparent 1px),
+        var(--bg);
+      background-size: 100% 42px;
+    }
+
+    .shell {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0 8px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--fg);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--fg);
+      background: var(--surface);
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    .topbar-note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.98fr) minmax(390px, 0.72fr);
+      gap: 38px;
+      align-items: start;
+      min-height: auto;
+      padding: 74px 0 34px;
+    }
+
+    .eyebrow,
+    .section-kicker,
+    .mini-label {
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 650;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow { margin-bottom: 18px; }
+
+    h1 {
+      max-width: 780px;
+      font-family: var(--font-display);
+      font-size: clamp(46px, 5.75vw, 84px);
+      line-height: 0.94;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    h1 .price {
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .lede {
+      max-width: 660px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: clamp(18px, 1.7vw, 21px);
+      line-height: 1.42;
+      text-wrap: pretty;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--fg);
+      padding: 0 18px;
+      background: var(--fg);
+      color: var(--surface);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+    }
+
+    .button.primary {
+      border-color: var(--accent);
+      background: var(--accent);
+    }
+
+    .button.secondary {
+      background: var(--surface);
+      color: var(--fg);
+      border-color: var(--border);
+    }
+
+    .button:hover { transform: translateY(-1px); }
+
+    .button:disabled {
+      cursor: not-allowed;
+      opacity: 0.62;
+      transform: none;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero-meta span {
+      border: 1px solid var(--border);
+      background: color-mix(in oklch, var(--surface), var(--bg) 24%);
+      padding: 7px 9px;
+    }
+
+    .asset-card {
+      position: relative;
+      justify-self: end;
+      width: 100%;
+      max-width: 520px;
+      border: 1px solid var(--fg);
+      background: var(--surface);
+      box-shadow: 14px 14px 0 var(--fg);
+    }
+
+    .asset-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .asset-title {
+      margin-top: 3px;
+      font-size: 15px;
+      font-weight: 760;
+    }
+
+    .asset-price {
+      min-width: 54px;
+      min-height: 34px;
+      display: grid;
+      place-items: center;
+      background: var(--fg);
+      color: var(--surface);
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 760;
+    }
+
+    .asset-body {
+      display: grid;
+      gap: 11px;
+      padding: 14px;
+    }
+
+    .asset-receipt {
+      display: grid;
+      gap: 8px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(90deg, color-mix(in oklch, var(--border), transparent 35%) 1px, transparent 1px),
+        linear-gradient(180deg, color-mix(in oklch, var(--border), transparent 35%) 1px, transparent 1px),
+        var(--bg);
+      background-size: 18px 18px;
+    }
+
+    .asset-receipt strong {
+      max-width: 420px;
+      font-size: 19px;
+      line-height: 1.16;
+      text-wrap: balance;
+    }
+
+    .asset-specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .spec {
+      min-height: 58px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .spec strong {
+      color: var(--fg);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 760;
+    }
+
+    .asset-beats {
+      display: grid;
+      border: 1px solid var(--border);
+      border-bottom: 0;
+    }
+
+    .asset-beat {
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      gap: 12px;
+      padding: 10px 11px;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+    }
+
+    .asset-beat span {
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .asset-output {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .output-item {
+      border: 1px solid var(--border);
+      padding: 9px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .output-item strong {
+      display: block;
+      margin-top: 5px;
+      color: var(--fg);
+      font-size: 13px;
+    }
+
+    .early-note {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 24px;
+      align-items: start;
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      background: color-mix(in oklch, var(--surface), var(--bg) 20%);
+    }
+
+    .early-note p {
+      color: var(--muted);
+      font-size: 14px;
+      text-wrap: pretty;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 360px);
+      gap: 54px;
+      align-items: start;
+      padding: 10px 0 54px;
+    }
+
+    .main-flow {
+      display: grid;
+      gap: 20px;
+    }
+
+    .section {
+      border: 1px solid var(--border);
+      background: color-mix(in oklch, var(--surface), var(--bg) 9%);
+      padding: 24px;
+    }
+
+    .section h2 {
+      max-width: 730px;
+      margin-top: 8px;
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1.05;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .section-copy {
+      max-width: 750px;
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.52;
+      text-wrap: pretty;
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      margin-top: 18px;
+      border: 1px solid var(--border);
+      border-right: 0;
+      background: var(--surface);
+    }
+
+    .pipeline-step {
+      min-height: 112px;
+      display: grid;
+      align-content: space-between;
+      gap: 12px;
+      border-right: 1px solid var(--border);
+      padding: 13px;
+      font-size: 13px;
+    }
+
+    .pipeline-step span {
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .case-card {
+      display: grid;
+      grid-template-columns: minmax(320px, 1fr) minmax(250px, 0.66fr);
+      gap: 22px;
+      align-items: start;
+      margin-top: 18px;
+    }
+
+    .case-story,
+    .case-visual {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 16px;
+      align-self: start;
+    }
+
+    .case-story h3 {
+      max-width: 440px;
+      margin-top: 8px;
+      font-size: 18px;
+      line-height: 1.12;
+      text-wrap: balance;
+    }
+
+    .case-story p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.48;
+    }
+
+    .shot-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .shot {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 10px;
+      border-top: 1px solid var(--border);
+      padding-top: 9px;
+      font-size: 13px;
+    }
+
+    .shot span {
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+    }
+
+    .teardown-player {
+      display: grid;
+      gap: 12px;
+    }
+
+    .phone-mock {
+      position: relative;
+      width: min(100%, 340px);
+      aspect-ratio: 9 / 16;
+      margin: 0 auto;
+      border: 1px solid var(--fg);
+      background: var(--fg);
+      padding: 8px;
+      box-shadow: 8px 8px 0 color-mix(in oklch, var(--fg), transparent 80%);
+    }
+
+    .video-frame {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      border: 1px solid color-mix(in oklch, var(--surface), transparent 18%);
+      background: color-mix(in oklch, var(--fg), var(--accent) 14%);
+      color: var(--surface);
+    }
+
+    .phone-video,
+    .video-fallback {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .phone-video {
+      object-fit: cover;
+      object-position: center top;
+      cursor: pointer;
+    }
+
+    .media-loaded .phone-video {
+      display: block;
+    }
+
+    .video-fallback {
+      display: grid;
+      align-content: space-between;
+      background:
+        radial-gradient(circle at 72% 18%, color-mix(in oklch, var(--surface), transparent 28%) 0 9%, transparent 10%),
+        linear-gradient(180deg, transparent 0 45%, color-mix(in oklch, var(--fg), transparent 10%) 45% 46%, transparent 46%),
+        linear-gradient(135deg, color-mix(in oklch, var(--accent), var(--surface) 12%), color-mix(in oklch, var(--fg), var(--accent) 24%));
+      padding: 12px;
+    }
+
+    .media-loaded .video-fallback {
+      display: none;
+    }
+
+    .story-subtitle {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: 10px;
+      z-index: 3;
+      display: grid;
+      gap: 4px;
+      padding: 8px 10px;
+      border: 1px solid color-mix(in oklch, var(--surface), transparent 72%);
+      background: color-mix(in oklch, var(--fg), transparent 18%);
+      color: var(--surface);
+      text-shadow: 0 1px 1px color-mix(in oklch, var(--fg), transparent 24%);
+      pointer-events: none;
+    }
+
+    .story-subtitle span {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 760;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      opacity: 0.72;
+    }
+
+    .story-subtitle strong {
+      font-size: 12px;
+      line-height: 1.26;
+    }
+
+    .fallback-caption {
+      position: relative;
+      z-index: 2;
+      align-self: end;
+      font-size: 20px;
+      font-weight: 780;
+      line-height: 1;
+      text-wrap: balance;
+    }
+
+    .segment-controls {
+      display: grid;
+      gap: 7px;
+    }
+
+    .segment-timeline {
+      --timeline-progress: 0;
+      position: relative;
+      margin-top: 12px;
+      padding-left: 20px;
+    }
+
+    .timeline-track {
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      bottom: 8px;
+      width: 4px;
+      background: color-mix(in oklch, var(--border), var(--fg) 8%);
+    }
+
+    .timeline-progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: calc(var(--timeline-progress) * 100%);
+      min-height: 8px;
+      background: var(--accent);
+    }
+
+    .timeline-indicator {
+      position: absolute;
+      left: 50%;
+      top: calc(var(--timeline-progress) * 100%);
+      width: 18px;
+      height: 18px;
+      border: 4px solid var(--accent);
+      border-radius: 50%;
+      background: var(--surface);
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 0 3px var(--surface);
+    }
+
+    .volume-control {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) 42px;
+      gap: 10px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .volume-control label {
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 760;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .volume-control input {
+      width: 100%;
+      min-height: auto;
+      padding: 0;
+      accent-color: var(--accent);
+    }
+
+    .volume-value {
+      color: var(--fg);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .segment-button {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 8px;
+      align-items: center;
+      min-height: 48px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--fg);
+      padding: 8px 10px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .segment-button:hover,
+    .segment-button.is-active {
+      border-color: var(--accent);
+      outline: 3px solid color-mix(in oklch, var(--accent), transparent 86%);
+    }
+
+    .segment-time {
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .segment-title {
+      display: block;
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .segment-note {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.28;
+    }
+
+    .demo-footer {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 16px;
+    }
+
+    .demo-footer-head {
+      display: grid;
+      grid-template-columns: minmax(160px, 0.3fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .demo-footer-head p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.42;
+    }
+
+    .preview-note {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .production-rail {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      border: 1px solid var(--border);
+      border-right: 0;
+      background: var(--bg);
+    }
+
+    .production-step {
+      min-height: 136px;
+      display: grid;
+      align-content: space-between;
+      gap: 10px;
+      border-right: 1px solid var(--border);
+      padding: 12px;
+    }
+
+    .production-step span {
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 760;
+      font-variant-numeric: tabular-nums;
+      text-transform: uppercase;
+    }
+
+    .production-step strong {
+      display: block;
+      font-size: 13px;
+      line-height: 1.16;
+    }
+
+    .production-step small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.24;
+    }
+
+    .proof-wall {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .proof-card {
+      min-height: 168px;
+      display: grid;
+      align-content: space-between;
+      gap: 18px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 15px;
+    }
+
+    .proof-source {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .source-id {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      color: var(--fg);
+      font-weight: 760;
+    }
+
+    .source-icon {
+      width: 26px;
+      height: 26px;
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .source-icon img {
+      display: block;
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    .source-meta {
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .proof-number {
+      margin-top: 12px;
+      color: var(--accent);
+      font-family: var(--font-display);
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 850;
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .proof-card h3 {
+      margin-top: 10px;
+      font-size: 15px;
+      line-height: 1.22;
+    }
+
+    .proof-card p {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.38;
+    }
+
+    .proof-card a {
+      width: fit-content;
+      color: var(--muted);
+      font-size: 12px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .disclaimer {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .request {
+      position: sticky;
+      top: 18px;
+      width: 100%;
+      max-width: 360px;
+      justify-self: end;
+      border: 1px solid var(--fg);
+      background: var(--surface);
+      padding: 22px;
+    }
+
+    .request h2 {
+      margin-top: 8px;
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.03;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .request p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.48;
+    }
+
+    .intent-line {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      padding: 11px;
+      color: var(--fg);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    form {
+      display: grid;
+      gap: 11px;
+      margin-top: 18px;
+    }
+
+    label {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 0;
+      background: var(--bg);
+      color: var(--fg);
+      padding: 10px 11px;
+      outline: 0;
+    }
+
+    textarea {
+      min-height: 78px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      outline: 3px solid color-mix(in oklch, var(--accent), transparent 82%);
+    }
+
+    .submit {
+      width: 100%;
+      min-height: 50px;
+      margin-top: 2px;
+      border-color: var(--accent);
+      background: var(--accent);
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.42;
+    }
+
+    .form-status {
+      min-height: 18px;
+      color: var(--fg);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .hp-field {
+      position: absolute;
+      left: -10000px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .identity-note {
+      margin-top: 14px;
+      border-top: 1px solid var(--border);
+      padding-top: 13px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.42;
+    }
+
+    .identity-note a {
+      color: var(--fg);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer {
+      padding: 18px 0 34px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 1020px) {
+      .hero,
+      .content-grid,
+      .case-card {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 34px;
+      }
+
+      .request {
+        position: static;
+        max-width: none;
+        justify-self: stretch;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 28px, 1160px); }
+      .topbar-note { display: none; }
+
+      .hero {
+        gap: 28px;
+        padding-top: 28px;
+      }
+
+      .eyebrow {
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        max-width: 100%;
+        font-size: clamp(38px, 11.6vw, 54px);
+        line-height: 0.98;
+      }
+
+      .lede {
+        margin-top: 16px;
+        font-size: 17px;
+        line-height: 1.36;
+      }
+
+      .hero-actions {
+        gap: 8px;
+        margin-top: 22px;
+      }
+
+      .hero-actions,
+      .button { width: 100%; }
+
+      .button {
+        min-height: 46px;
+      }
+
+      .button.secondary {
+        min-height: 42px;
+      }
+
+      .hero-meta {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+        margin-top: 14px;
+        font-size: 11px;
+      }
+
+      .hero-meta span {
+        padding: 6px 7px;
+      }
+
+      .asset-card {
+        justify-self: stretch;
+        box-shadow: 8px 8px 0 var(--fg);
+      }
+
+      .asset-header {
+        padding: 14px;
+      }
+
+      .asset-body {
+        padding: 12px;
+      }
+
+      .asset-receipt strong {
+        font-size: 17px;
+      }
+
+      .asset-beat,
+      .early-note {
+        grid-template-columns: 1fr;
+      }
+
+      .asset-specs,
+      .asset-output,
+      .proof-wall {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-source {
+        align-items: flex-start;
+      }
+
+      .source-meta {
+        max-width: 140px;
+      }
+
+      .story-subtitle {
+        left: 8px;
+        right: 8px;
+        top: 8px;
+        padding: 8px;
+      }
+
+      .story-subtitle strong {
+        font-size: 11px;
+      }
+
+      .demo-footer-head {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+
+      .production-rail {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        border-right: 0;
+        border-bottom: 0;
+      }
+
+      .production-step {
+        min-height: 106px;
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .production-step:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .production-step:last-child {
+        grid-column: 1 / -1;
+        border-right: 0;
+        border-bottom: 0;
+      }
+
+      .section,
+      .request { padding: 18px; }
+
+      .volume-control {
+        grid-template-columns: 1fr 2fr 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="shell topbar" aria-label="Page header">
+      <a class="brand" href="#" aria-label="AdFrame Pilot">
+        <span class="brand-mark">AF</span>
+        <span>AdFrame Pilot</span>
+      </a>
+      <div class="topbar-note">A $1 founding pilot for app creative teams</div>
+    </header>
+
+    <main>
+      <section class="shell hero" data-od-id="hero">
+        <div>
+          <div class="eyebrow">For mobile app UA, growth, and performance creative leads</div>
+          <h1 data-od-id="headline">Founding pilot: get one custom skit-style app video test for <span class="price">$1</span>.</h1>
+          <p class="lede">Submit your app URL, target platform, and creative language. If accepted, I’ll produce one finished 9:16 scenario-led video creative with a human hook, app UI reveal, CTA ending, subtitles/BGM, and short production notes.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#request">Request my $1 video test</a>
+            <a class="button secondary" href="#example">See what skit-style means</a>
+          </div>
+          <div class="hero-meta" aria-label="Offer constraints">
+            <span>No subscription</span>
+            <span>No account</span>
+            <span>No checkout here</span>
+            <span>Manual acceptance</span>
+          </div>
+        </div>
+
+        <aside class="asset-card" aria-label="Test asset receipt" data-od-id="hero-preview">
+          <div class="asset-header">
+            <div>
+              <div class="mini-label">Your test asset includes</div>
+              <div class="asset-title">Finished skit-style app video test</div>
+            </div>
+            <div class="asset-price">$1</div>
+          </div>
+          <div class="asset-body">
+            <div class="asset-receipt">
+              <div class="mini-label">Example input</div>
+              <strong>Brazil location app: football night, pickup panic, app opens as the useful action.</strong>
+            </div>
+            <div class="asset-specs">
+              <div class="spec"><span>Format</span><strong>Finished 9:16 MP4</strong></div>
+              <div class="spec"><span>Platform</span><strong>TikTok / Meta</strong></div>
+              <div class="spec"><span>Language</span><strong>Native-ready</strong></div>
+            </div>
+            <div class="asset-beats">
+              <div class="asset-beat"><span>Hook</span><strong>A father celebrates a match in a crowded Brazilian bar.</strong></div>
+              <div class="asset-beat"><span>Tension</span><strong>A reminder appears: "Call Mia." He forgot school pickup.</strong></div>
+              <div class="asset-beat"><span>App</span><strong>The map shows Mia still at tutoring, with a safe route home.</strong></div>
+              <div class="asset-beat"><span>CTA</span><strong>"Stay calm when plans change. Know where they are."</strong></div>
+            </div>
+            <div class="asset-output">
+              <div class="output-item">You receive<strong>Finished 9:16 MP4</strong></div>
+              <div class="output-item">You receive<strong>Script + storyboard used</strong></div>
+              <div class="output-item">You receive<strong>App UI reveal integration</strong></div>
+              <div class="output-item">You receive<strong>Subtitles, pacing, CTA ending</strong></div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="shell early-note" aria-label="Early product validation note">
+        <div class="section-kicker">Early production test</div>
+        <p>This is a $1 manual production test while the scenario-based app ad generation product is being shaped. If your request is accepted, you receive one finished 9:16 MP4 testable video creative, not a script-only or storyboard-only deliverable. This does not guarantee ad performance, platform approval, installs, or conversions.</p>
+      </section>
+
+      <div class="shell content-grid">
+        <div class="main-flow">
+          <section class="section" id="example" data-od-id="example">
+            <div class="section-kicker">What skit-style means</div>
+            <h2>A short human scenario that turns an app feature into a moment worth watching.</h2>
+            <p class="section-copy"><strong>A skit-style app ad</strong> is a short human scenario where a user moment creates tension, the app appears as the useful action, and the ad closes with a clear CTA.</p>
+
+            <div class="case-card">
+              <aside class="case-visual" aria-label="Brazil location app video teardown">
+                <div class="teardown-player">
+                  <div class="phone-mock">
+                    <div class="video-frame" id="demoFrame">
+                      <video class="phone-video" id="demoVideo" src="assets/segments/brazil-location-from-00.mp4" playsinline preload="metadata" title="Click the segment cards to play from that moment"></video>
+                      <div class="video-fallback" aria-hidden="true">
+                        <div></div>
+                        <div class="fallback-caption">Football night.<br />Pickup panic.<br />Location reveal.</div>
+                      </div>
+                      <div class="story-subtitle" id="storySubtitle" aria-live="polite">
+                        <span id="storySubtitleLabel">English subtitles · 0-4s</span>
+                        <strong id="storySubtitleText">Oh no... I forgot my daughter!</strong>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="preview-note">Demo asset from the uploaded Brazil location-app material. The top overlay is an English subtitle layer synced to the Portuguese lines in the video. Demo only. Not affiliated with Live Locator Family Tracker or any referenced brand.</p>
+                  <div class="volume-control" aria-label="Video volume control">
+                    <label for="demoVolume">Volume</label>
+                    <input id="demoVolume" type="range" min="0" max="100" value="30" step="1" />
+                    <span class="volume-value" id="volumeValue">30%</span>
+                  </div>
+                </div>
+              </aside>
+
+              <article class="case-story">
+                <div class="mini-label">Sample production path</div>
+                <h3>Brazil location app: click a teardown card to start from that moment.</h3>
+                <p>Each card marks a strategic role inside the video. Click any moment to jump there, then keep watching through the rest of the ad.</p>
+                <div class="segment-timeline" id="segmentTimeline" aria-label="Video segment progress">
+                  <div class="timeline-track" aria-hidden="true">
+                    <div class="timeline-progress"></div>
+                    <div class="timeline-indicator"></div>
+                  </div>
+                  <div class="segment-controls" aria-label="Video segment controls">
+                    <button class="segment-button is-active" type="button" data-start="0" data-src="assets/segments/brazil-location-from-00.mp4" data-label="0-4s · Hook">
+                      <span class="segment-time">0-4s</span>
+                      <span><span class="segment-title">Hook</span><span class="segment-note">A loud football night is interrupted by a sudden "forgot the child" family crisis, using contrast to earn attention.</span></span>
+                    </button>
+                    <button class="segment-button" type="button" data-start="2" data-src="assets/segments/brazil-location-from-02.mp4" data-label="2-5s · Pain Point">
+                      <span class="segment-time">2-5s</span>
+                      <span><span class="segment-title">Pain Point</span><span class="segment-note">A distracted parent cannot instantly confirm a child’s location, triggering safety anxiety and responsibility pressure.</span></span>
+                    </button>
+                    <button class="segment-button" type="button" data-start="4" data-src="assets/segments/brazil-location-from-04.mp4" data-label="4-8s · Solution">
+                      <span class="segment-time">4-8s</span>
+                      <span><span class="segment-title">Solution</span><span class="segment-note">Live Locator uses real-time map location to help the parent quickly confirm where the family member is.</span></span>
+                    </button>
+                    <button class="segment-button" type="button" data-start="5" data-src="assets/segments/brazil-location-from-05.mp4" data-label="5-8s · Payoff">
+                      <span class="segment-time">5-8s</span>
+                      <span><span class="segment-title">Payoff</span><span class="segment-note">He sees his daughter is safely at tutoring, so the emotion moves from panic back to relief.</span></span>
+                    </button>
+                    <button class="segment-button" type="button" data-start="9" data-src="assets/segments/brazil-location-from-09.mp4" data-label="9-18s · Social Trigger">
+                      <span class="segment-time">9-18s</span>
+                      <span><span class="segment-title">Social Trigger</span><span class="segment-note">A friend notices the product value, then the "I forgot my child too" reversal makes the ad more memorable.</span></span>
+                    </button>
+                    <button class="segment-button" type="button" data-start="19" data-src="assets/segments/brazil-location-from-19.mp4" data-label="19-22s · CTA">
+                      <span class="segment-time">19-22s</span>
+                      <span><span class="segment-title">CTA</span><span class="segment-note">The Live Locator Family Tracker brand page and Google Play download entry turn the story into install intent.</span></span>
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="demo-footer" aria-label="How this demo is produced">
+              <div class="demo-footer-head">
+                <div class="section-kicker">How this demo is produced</div>
+                <p>The demo is not just a script. It shows the production path from product insight to a finished short-form video asset. Demo only. Not affiliated with Live Locator Family Tracker or any referenced brand.</p>
+              </div>
+              <div class="production-rail" aria-label="Skit-style ad production path">
+                <div class="production-step"><span>Step 1</span><strong>Script from pain + product solution</strong><small>AI creates skit scripts from the user pain point, product utility, and target platform context.</small></div>
+                <div class="production-step"><span>Step 2</span><strong>Consistent character and scene assets</strong><small>The best scripts are used to extract character references and scene images that stay consistent across shots.</small></div>
+                <div class="production-step"><span>Step 3</span><strong>Storyboard frames</strong><small>Each beat is turned into clear storyboard frames: hook, tension, app reveal, payoff, and CTA.</small></div>
+                <div class="production-step"><span>Step 4</span><strong>Multilingual voice + lip-synced clips</strong><small>AI generates localized audio and lip-synced shot videos so the ad can match the target language.</small></div>
+                <div class="production-step"><span>Step 5</span><strong>Final edited creative</strong><small>The clips are merged into the final asset with subtitles, BGM, pacing, and platform-ready finishing.</small></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section" id="why" data-od-id="proof">
+            <div class="section-kicker">Why this is worth testing now</div>
+            <h2>Creative teams need more testable stories, faster.</h2>
+            <p class="section-copy">These signals do not guarantee performance. They support a focused test: scenario-led creatives, structured for short-form platforms, with enough specificity to brief production quickly.</p>
+            <div class="proof-wall">
+              <article class="proof-card">
+                <div>
+                  <div class="proof-source">
+                    <span class="source-id"><span class="source-icon" aria-hidden="true"><img src="assets/source-icons/liftoff.ico" alt="" /></span><span>Liftoff</span></span>
+                    <span class="source-meta">Mobile creative index</span>
+                  </div>
+                  <div class="proof-number">+152%</div>
+                  <h3>UGC-style app ads can convert better.</h3>
+                  <p>Advertisers introducing UGC-style video ads increased impression-to-install conversion rates by an average of 152%.</p>
+                </div>
+                <a href="https://liftoff.ai/blog/highlights-2025-mobile-ad-creative-index/" target="_blank" rel="noreferrer">Source</a>
+              </article>
+              <article class="proof-card">
+                <div>
+                  <div class="proof-source">
+                    <span class="source-id"><span class="source-icon" aria-hidden="true"><img src="assets/source-icons/appsflyer.ico" alt="" /></span><span>AppsFlyer</span></span>
+                    <span class="source-meta">Creative trends</span>
+                  </div>
+                  <div class="proof-number">6%</div>
+                  <h3>Storytelling hooks appear underused.</h3>
+                  <p>Storytelling hooks in Social had the highest Day 7 retention while accounting for only 6% of spend.</p>
+                </div>
+                <a href="https://www.appsflyer.com/company/newsroom/pr/ai-emotion-creative-trends/" target="_blank" rel="noreferrer">Source</a>
+              </article>
+              <article class="proof-card">
+                <div>
+                  <div class="proof-source">
+                    <span class="source-id"><span class="source-icon" aria-hidden="true"><img src="assets/source-icons/bidease.png" alt="" /></span><span>Bidease</span></span>
+                    <span class="source-meta">Growth survey</span>
+                  </div>
+                  <div class="proof-number">75%</div>
+                  <h3>Creative refresh cycles are getting shorter.</h3>
+                  <p>Nearly 75% of surveyed mobile marketers refresh creatives at least bi-weekly; 77.25% say video is a top-performing ad type.</p>
+                </div>
+                <a href="https://www.bidease.com/blog/the-2025-state-of-mobile-app-growth-survey-is-here" target="_blank" rel="noreferrer">Source</a>
+              </article>
+              <article class="proof-card">
+                <div>
+                  <div class="proof-source">
+                    <span class="source-id"><span class="source-icon" aria-hidden="true"><img src="assets/source-icons/tiktok.ico" alt="" /></span><span>TikTok</span></span>
+                    <span class="source-meta">Creative Codes</span>
+                  </div>
+                  <div class="proof-number">3 beats</div>
+                  <h3>Structure matters on short-form platforms.</h3>
+                  <p>TikTok recommends a hook-body-close structure, using suspense, surprise, or emotion to capture attention.</p>
+                </div>
+                <a href="https://ads.tiktok.com/business/en/creative-codes" target="_blank" rel="noreferrer">Source</a>
+              </article>
+            </div>
+            <p class="disclaimer">Disclaimer: these signals support testing scenario-based creatives. They do not guarantee ad performance.</p>
+          </section>
+        </div>
+
+        <aside class="request" id="request" data-od-id="request">
+          <div class="section-kicker">Apply for the test</div>
+          <h2>Request your $1 skit-style app video test.</h2>
+          <p>Submitting this form signals you are willing to pay the $1 early test price if your request is accepted.</p>
+          <div class="intent-line">Request: one finished custom scenario-led 9:16 MP4 video creative for $1.</div>
+          <form id="requestForm">
+            <label>
+              Product / app URL
+              <input name="url" type="url" placeholder="https://yourapp.com" required />
+            </label>
+            <div class="hp-field" aria-hidden="true">
+              <label>
+                Leave this field empty
+                <input name="honeypot" type="text" tabindex="-1" autocomplete="off" />
+              </label>
+            </div>
+            <label>
+              Scenario expectation optional
+              <textarea name="scenario" placeholder="e.g. stressed parent, football night, budget check, onboarding confusion"></textarea>
+            </label>
+            <label>
+              Target ad platform
+              <select name="platform" required>
+                <option value="">Select one</option>
+                <option>TikTok</option>
+                <option>Meta</option>
+                <option>YouTube Shorts</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>
+              Creative language
+              <input name="language" type="text" placeholder="English, Chinese, Portuguese..." required />
+            </label>
+            <label>
+              Work email
+              <input name="email" type="email" placeholder="name@company.com" required />
+            </label>
+            <button class="button submit" type="submit">Request my $1 video test</button>
+            <p class="form-note">No subscription. No account. No checkout on this page. Payment is handled manually only if the request is accepted.</p>
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+          <div class="identity-note">
+            Built by Ethan.<br />
+            Contact: <a href="mailto:hello@popcornai.art">hello@popcornai.art</a>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="shell footer">
+      Built by Ethan. Contact: hello@popcornai.art<br />
+      Demo only. AdFrame is not affiliated with Live Locator Family Tracker or any referenced brands shown in the sample.
+    </footer>
+  </div>
+
+  <script>
+    const requestForm = document.getElementById('requestForm');
+    const formStatus = document.getElementById('formStatus');
+    const submitButton = requestForm.querySelector('.submit');
+    const demoVideo = document.getElementById('demoVideo');
+    const demoFrame = document.getElementById('demoFrame');
+    const storySubtitle = document.getElementById('storySubtitle');
+    const storySubtitleLabel = document.getElementById('storySubtitleLabel');
+    const storySubtitleText = document.getElementById('storySubtitleText');
+    const demoVolume = document.getElementById('demoVolume');
+    const volumeValue = document.getElementById('volumeValue');
+    const segmentTimeline = document.getElementById('segmentTimeline');
+    const segmentButtons = Array.from(document.querySelectorAll('.segment-button'));
+    const ORIGINAL_VIDEO_DURATION = 23.33;
+    const subtitleCues = [
+      {
+        start: 0,
+        end: 4,
+        label: 'English subtitles · 0-4s',
+        text: "Oh no... I forgot my daughter!"
+      },
+      {
+        start: 4,
+        end: 8.8,
+        label: 'English subtitles · 4-8s',
+        text: "Phew... she's at tutoring. Live Locator saved me."
+      },
+      {
+        start: 8.8,
+        end: 11.4,
+        label: 'English subtitles · 9-11s',
+        text: "With Live Locator, let's watch the game."
+      },
+      {
+        start: 11.4,
+        end: 14.4,
+        label: 'English subtitles · 11-14s',
+        text: "Seriously? Why didn't you say that earlier?"
+      },
+      {
+        start: 14.4,
+        end: 22.2,
+        label: 'English subtitles · 15-22s',
+        text: "Oh no... I forgot my son. I'm downloading Live Locator!"
+      }
+    ];
+    let demoMediaReady = false;
+    let activeSegmentButton = segmentButtons.find((button) => button.classList.contains('is-active')) || segmentButtons[0];
+    let playbackOffset = Number(activeSegmentButton?.dataset.start) || 0;
+    let currentVolume = 0.3;
+    let isSubmittingRequest = false;
+
+    function applyAudioDefaults() {
+      demoVideo.muted = currentVolume === 0;
+      demoVideo.defaultMuted = false;
+      demoVideo.volume = currentVolume;
+    }
+
+    function syncVolumeControl() {
+      const percent = Math.round(currentVolume * 100);
+      if (demoVolume) {
+        demoVolume.value = String(percent);
+      }
+      if (volumeValue) {
+        volumeValue.textContent = `${percent}%`;
+      }
+    }
+
+    function setTimelineProgress(originalTime) {
+      if (!segmentTimeline) return;
+      const clamped = Math.max(0, Math.min(originalTime, ORIGINAL_VIDEO_DURATION));
+      const progress = ORIGINAL_VIDEO_DURATION > 0 ? clamped / ORIGINAL_VIDEO_DURATION : 0;
+      segmentTimeline.style.setProperty('--timeline-progress', progress.toFixed(4));
+    }
+
+    applyAudioDefaults();
+    syncVolumeControl();
+    setTimelineProgress(playbackOffset);
+
+    requestForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (isSubmittingRequest) return;
+
+      isSubmittingRequest = true;
+      const idleButtonText = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = 'Submitting...';
+      formStatus.textContent = 'Submitting...';
+
+      const formData = new FormData(requestForm);
+      const payload = Object.fromEntries(formData.entries());
+      payload.page_url = window.location.href;
+      payload.referrer = document.referrer;
+
+      try {
+        const response = await fetch('/api/intake', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok || !result.ok) {
+          throw new Error(result.error || 'Submit failed');
+        }
+
+        requestForm.reset();
+        formStatus.textContent = 'Request received. If accepted, I’ll reply by email with the next step.';
+      } catch (error) {
+        formStatus.textContent = 'Submit failed. Please email me directly.';
+      } finally {
+        isSubmittingRequest = false;
+        submitButton.disabled = false;
+        submitButton.textContent = idleButtonText;
+      }
+    });
+
+    demoVideo.addEventListener('loadeddata', () => {
+      demoMediaReady = true;
+      demoFrame.classList.add('media-loaded');
+    });
+
+    demoVideo.addEventListener('error', () => {
+      demoMediaReady = false;
+      demoFrame.classList.remove('media-loaded');
+    });
+
+    demoVideo.addEventListener('click', () => {
+      if (demoVideo.paused) {
+        applyAudioDefaults();
+        demoVideo.play().catch(() => {});
+      } else {
+        demoVideo.pause();
+      }
+    });
+
+    if (demoVolume) {
+      demoVolume.addEventListener('input', () => {
+        currentVolume = Math.max(0, Math.min(Number(demoVolume.value) / 100, 1));
+        applyAudioDefaults();
+        syncVolumeControl();
+      });
+    }
+
+    function setActiveSegment(button) {
+      if (!button || button === activeSegmentButton) return;
+      segmentButtons.forEach((item) => item.classList.remove('is-active'));
+      button.classList.add('is-active');
+      activeSegmentButton = button;
+    }
+
+    function subtitleCueForTime(time) {
+      return subtitleCues.find((cue) => time >= cue.start && time < cue.end) || subtitleCues[subtitleCues.length - 1];
+    }
+
+    function syncStoryCaptionForTime(time) {
+      if (!storySubtitle) return;
+      const cue = subtitleCueForTime(time);
+      if (!cue) return;
+      if (storySubtitleLabel) {
+        storySubtitleLabel.textContent = cue.label;
+      }
+      if (storySubtitleText) {
+        storySubtitleText.textContent = cue.text;
+      }
+    }
+
+    function segmentForTime(time) {
+      return segmentButtons.slice().reverse().find((button) => {
+        const start = Number(button.dataset.start);
+        return Number.isFinite(start) && time >= start;
+      }) || segmentButtons[0];
+    }
+
+    function playSegment(button) {
+      const start = Number(button.dataset.start);
+      const src = button.dataset.src;
+      if (!Number.isFinite(start) || !src) return;
+
+      playbackOffset = start;
+      demoVideo.pause();
+      syncStoryCaptionForTime(start);
+      setTimelineProgress(start);
+
+      if (demoVideo.getAttribute('src') !== src) {
+        demoVideo.setAttribute('src', src);
+        demoVideo.load();
+      } else {
+        demoVideo.currentTime = 0;
+      }
+
+      const playAfterLoad = () => {
+        applyAudioDefaults();
+        demoVideo.currentTime = 0;
+        demoVideo.play().catch(() => {});
+      };
+
+      if (demoVideo.readyState >= 2) {
+        playAfterLoad();
+      } else {
+        demoVideo.addEventListener('canplay', playAfterLoad, { once: true });
+      }
+    }
+
+    demoVideo.addEventListener('timeupdate', () => {
+      const originalTime = playbackOffset + demoVideo.currentTime;
+      const currentButton = segmentForTime(originalTime);
+      if (currentButton && currentButton !== activeSegmentButton) {
+        setActiveSegment(currentButton);
+      }
+      syncStoryCaptionForTime(originalTime);
+      setTimelineProgress(originalTime);
+    });
+
+    demoVideo.addEventListener('ended', () => {
+      setTimelineProgress(ORIGINAL_VIDEO_DURATION);
+    });
+
+    segmentButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        setActiveSegment(button);
+        playSegment(button);
+      });
+    });
+
+    syncStoryCaptionForTime(Number(activeSegmentButton?.dataset.start) || 4);
+  </script>
+</body>
+</html>
