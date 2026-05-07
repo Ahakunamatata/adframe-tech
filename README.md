@@ -7,10 +7,10 @@
 ## 项目结构
 
 - `index.html`: Vercel 根页面。
-- `favicon.svg`: 浏览器标签页 icon，方形 SVG，适合 favicon 缩放。
+- `assets/favicon-16.png`、`assets/favicon-32.png`、`assets/favicon-48.png`: 浏览器标签页 icon。
 - `skit-style-app-video-ad-landing_副本.html`: 改造来源文件，内容与 `index.html` 保持一致。
 - `api/intake.js`: 表单提交后端，接收 `POST /api/intake`。
-- `assets/adframe-logo.svg`: 页面 header 使用的 AdFrame 横向 logo。
+- `assets/adframe-logo.png`: 页面 header 使用的 AdFrame logo mark。
 - `assets/segments/`: demo 视频片段。
 - `assets/source-icons/`: proof 区块来源图标。
 - `.vercelignore`: 部署时排除线索数据、脚本、旧验证页和本地文档，只上传上线需要的页面、API 与 assets。
